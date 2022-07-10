@@ -71,7 +71,7 @@ export class SnakeHandler extends MessageHandler{
         }else if(this.checkCommand(req, "прав")) {
             newPos = {x:head.x+1, y:head.y}
         }else if(!firstTurn){
-            return {text: "Я вас не поняла", buttons: this.buttons(["съедобное", "несъедобное"])}
+            return {text: "Я вас не поняла", buttons:this.buttons(["Вверх", "Вниз", "Влево", "Вправо"])}
         }
 
         if(!firstTurn){
