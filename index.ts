@@ -3,6 +3,7 @@ import cors from 'cors';
 import {OchkoHandler} from "./ochko";
 import {MarRequest, MarResponse, MessageHandler, ReqRequest, SessionData} from "./types";
 import {EatHandler} from "./can_eat";
+import {SnakeHandler} from "./snake";
 
 const app = express();
 const port = 3600;
@@ -41,6 +42,10 @@ app.post("/marusya/10", (req, res) => {
 
 app.post("/marusya/20", (req, res) => {
   handler(req, res, ()=>new EatHandler())
+})
+
+app.post("/marusya/30", (req, res) => {
+  handler(req, res, ()=>new SnakeHandler())
 })
 
 app.listen(port, () => {
