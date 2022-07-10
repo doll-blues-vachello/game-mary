@@ -1,0 +1,7 @@
+services:
+  marusya:
+    build:
+      .
+    ports:
+      - 8080:3600
+    restart: always
